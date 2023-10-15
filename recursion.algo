@@ -1,0 +1,14 @@
+FUNCTION IsPalindrome(word:STRING,left:INTEGER,right:INTEGER):BOOLEAN;
+BEGIN
+    left:=0
+    right:=length[word]-1
+    IF the length[word]:= 0 OR length[word]:=1 THEN
+        RETURN true  // Base case: empty word or single character word is a palindrome
+    END_IF
+
+    IF word[left]:= word[right] THEN
+        RETURN IsPalindrome(word[left]+1,word[right]-1);
+    ELSE
+        RETURN false  // Characters at the ends are different, not a palindrome
+    END_IF
+END
